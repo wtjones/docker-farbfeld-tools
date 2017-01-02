@@ -9,7 +9,9 @@ RUN cd /usr/local && \
 # Using make doesn't work for me, so just compile each file
 RUN cd /usr/local/farbfeld && \
     mkdir bin && \
-    cc png2ff.c -o ./bin/png2ff -lpng
+    cc png2ff.c -o ./bin/png2ff -lpng  && \
+    cc ff2png.c -o ./bin/ff2png -lpng && \
+    cc jpg2ff.c -o ./bin/jpg2ff -ljpeg
 
 ENV PATH="/usr/local/farbfeld/bin:${PATH}"
 
